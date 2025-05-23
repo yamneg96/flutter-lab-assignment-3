@@ -10,7 +10,11 @@ class AlbumDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Album #$albumId')),
+      appBar: AppBar(
+        title: Text('Album #$albumId'),
+        backgroundColor: Colors.indigo,
+        titleTextStyle: TextStyle(color: Colors.white),
+      ),
       body: BlocBuilder<AlbumBloc, AlbumState>(
         builder: (context, state) {
           if (state is AlbumLoaded) {
@@ -74,9 +78,7 @@ class AlbumDetailScreen extends StatelessWidget {
                           ),
                         )
                       else
-                        const Expanded(
-                          child: SizedBox(),
-                        ),
+                        const Expanded(child: SizedBox()),
                     ],
                   ),
               ],

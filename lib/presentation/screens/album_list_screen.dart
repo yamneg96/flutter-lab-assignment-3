@@ -10,7 +10,12 @@ class AlbumListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Albums')),
+      appBar: AppBar(
+        title: const Text('Albums'),
+        backgroundColor: Colors.indigo,
+        titleTextStyle: TextStyle(color: Colors.white),
+      ),
+
       body: BlocBuilder<AlbumBloc, AlbumState>(
         builder: (context, state) {
           if (state is AlbumLoading) {
@@ -51,7 +56,7 @@ class AlbumListScreen extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width * 0.9,
                         decoration: BoxDecoration(
-                          color: Colors.lightBlue.shade50,
+                          color: Colors.lightBlueAccent,
                           borderRadius: BorderRadius.circular(4),
                           border: Border.all(color: Colors.blueGrey, width: 2),
                         ),
